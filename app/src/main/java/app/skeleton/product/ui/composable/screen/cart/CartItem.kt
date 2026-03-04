@@ -10,9 +10,8 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material3.Card
-import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
@@ -25,26 +24,23 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import app.skeleton.product.R
+import app.skeleton.product.ui.composable.shared.CardBase
 import app.skeleton.product.ui.state.CartItemUiState
 
 @Composable
-fun CartItemCard(
-    modifier: Modifier = Modifier,
+fun CartItem(
     cartItem: CartItemUiState,
+    modifier: Modifier = Modifier,
     onPlusClick: () -> Unit,
     onMinusClick: () -> Unit,
 ) {
-    Card(
+    CardBase(
         modifier = modifier,
-        shape = RoundedCornerShape(12.dp),
-        colors = CardDefaults.cardColors(
-            containerColor = MaterialTheme.colorScheme.surface,
-            contentColor = MaterialTheme.colorScheme.onSurface,
-        ),
-        elevation = CardDefaults.cardElevation(defaultElevation = 2.dp)
     ) {
         Row(
             modifier = Modifier
@@ -95,6 +91,7 @@ fun CartItemCard(
                     ) {
                         IconButton(
                             onClick = onMinusClick,
+                            modifier = Modifier.size(32.dp),
                         ) {
                             Icon(
                                 painter = painterResource(R.drawable.minus_svgrepo_com),
@@ -105,6 +102,8 @@ fun CartItemCard(
 
                         Text(
                             text = cartItem.quantity.toString(),
+                            modifier = Modifier.width(35.dp),
+                            textAlign = TextAlign.Center,
                             style = MaterialTheme.typography.bodyLarge.copy(
                                 fontWeight = FontWeight.Medium
                             )
@@ -112,6 +111,7 @@ fun CartItemCard(
 
                         IconButton(
                             onClick = onPlusClick,
+                            modifier = Modifier.size(32.dp),
                         ) {
                             Icon(
                                 painter = painterResource(R.drawable.plus_svgrepo_com),

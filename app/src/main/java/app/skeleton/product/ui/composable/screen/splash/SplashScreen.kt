@@ -1,6 +1,5 @@
 package app.skeleton.product.ui.composable.screen.splash
 
-import android.util.Log
 import androidx.compose.foundation.layout.Box
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -24,7 +23,6 @@ fun SplashScreen(
 
     LaunchedEffect(onboardedState) {
         delay(3000)
-        Log.d("OnboardingScreen", "onboardedState: $onboardedState")
         if (onboardedState) {
             onNavigateToHomeScreen()
         } else {

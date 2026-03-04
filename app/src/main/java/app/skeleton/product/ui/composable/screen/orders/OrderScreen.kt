@@ -11,6 +11,7 @@ import app.skeleton.product.R
 import app.skeleton.product.data.entity.OrderEntity
 import app.skeleton.product.ui.composable.shared.DataBasedContainer
 import app.skeleton.product.ui.composable.shared.DataEmptyContent
+import app.skeleton.product.ui.composable.shared.ItemsList
 import app.skeleton.product.ui.state.DataUiState
 import app.skeleton.product.ui.viewmodel.OrderViewModel
 import org.koin.androidx.compose.koinViewModel
@@ -35,7 +36,7 @@ private fun OrdersContent(
 ) {
     Column(modifier = modifier) {
 
-        DataBasedContainer<List<OrderEntity>>(
+        DataBasedContainer(
             dataState = ordersState,
 
             dataPopulated = {
@@ -59,8 +60,10 @@ private fun OrdersPopulated(
     orders: List<OrderEntity>,
     modifier: Modifier = Modifier,
 ) {
-    OrderList(
-        orders = orders,
-        modifier = modifier
+
+    ItemsList(
+        items = orders,
+        modifier = modifier,
+        itemCard = { order -> OrderItem(order) }
     )
 }
