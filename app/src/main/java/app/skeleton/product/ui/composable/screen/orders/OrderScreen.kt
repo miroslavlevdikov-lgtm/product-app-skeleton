@@ -63,7 +63,7 @@ private fun OrdersPopulated(
 
     ItemsList(
         items = orders,
-        modifier = modifier,
+        modifier = Modifier.fillMaxSize(),
         itemCard = { order -> OrderItem(order) }
     )
 }

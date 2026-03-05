@@ -1,25 +1,24 @@
 package app.skeleton.product.ui.composable.screen.settings
 
 import androidx.annotation.DrawableRes
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalUriHandler
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import app.skeleton.product.R
+import app.skeleton.product.ui.composable.shared.CardBase
 
 @Composable
 fun SettingsScreen(modifier: Modifier = Modifier) {
@@ -39,6 +38,8 @@ private fun SettingsContent(
     website: String,
     modifier: Modifier = Modifier,
 ) {
+    val uriHandler = LocalUriHandler.current
+
     Column(
         modifier = modifier,
         verticalArrangement = Arrangement.spacedBy(15.dp)
@@ -59,6 +60,7 @@ private fun SettingsContent(
             iconResId = null,
             label = stringResource(R.string.settings_screen_customer_support_label),
             content = website,
+            onClick = { uriHandler.openUri(website) },
         )
     }
 }
@@ -72,11 +74,9 @@ fun SettingsItem(
     content: String,
     onClick: (() -> Unit)? = null,
 ) {
-    Surface(
-        modifier = modifier.then(
-            if (onClick != null) Modifier.clickable { onClick() } else Modifier
-        ),
-        shape = RoundedCornerShape(8.dp),
+    CardBase(
+        modifier = modifier,
+        onClick = onClick,
     ) {
         Row(
             modifier = Modifier

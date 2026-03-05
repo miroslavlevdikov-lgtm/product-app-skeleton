@@ -71,6 +71,7 @@ class CheckoutViewModel(
                 )
 
                 orderRepository.save(order)
+                cartRepository.deleteAll()
                 _orderState.update { DataUiState.Populated(data = order) }
             } else {
                 _emailInvalidState.update { true }

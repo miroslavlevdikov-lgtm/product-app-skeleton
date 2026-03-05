@@ -84,7 +84,7 @@ private fun ProductsPopulated(
         ProductFilter(
             modifier = Modifier
                 .fillMaxWidth()
-                .background(color = MaterialTheme.colorScheme.surface),
+                .background(color = MaterialTheme.colorScheme.primaryContainer),
             selectedCategories = selectedCategories,
             onCategoryClick = onCategoryClick,
         )

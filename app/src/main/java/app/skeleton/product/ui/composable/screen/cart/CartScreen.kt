@@ -94,7 +94,7 @@ private fun CartPopulated(
     ) {
         ItemsList(
             items = cartItems,
-            modifier = modifier,
+            modifier = Modifier.weight(1f),
             itemCard = { cartItem ->
                 CartItem(
                     cartItem = cartItem,
