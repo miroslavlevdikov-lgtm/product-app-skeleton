@@ -55,6 +55,10 @@ fun AppTopBar(
                         painter = painterResource(R.drawable.trash_svgrepo_com),
                         contentDescription = "Clear Cart",
                         modifier = Modifier.size(24.dp),
+                        tint = if (isCartNotEmpty)
+                            MaterialTheme.colorScheme.onPrimary
+                        else
+                            MaterialTheme.colorScheme.onPrimary.copy(alpha = 0.5f),
                     )
                 }
             }

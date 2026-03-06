@@ -20,11 +20,10 @@ class OrderRepository(
         return orderDao.observeAll()
     }
 
-    /*
+
     suspend fun deleteByNumber(orderNumber: String) {
         withContext(coroutineDispatcher) {
             orderDao.deleteByNumber(orderNumber)
         }
     }
-     */
 }

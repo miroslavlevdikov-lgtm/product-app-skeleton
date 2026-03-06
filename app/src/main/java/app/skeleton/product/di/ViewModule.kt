@@ -33,6 +33,7 @@ val viewModule = module {
     viewModel {
         ProductViewModel(
             productRepository = get(),
+            cartRepository = get(),
         )
     }
 

@@ -30,4 +30,10 @@ class OrderViewModel(
             }
         }
     }
+
+    fun deleteOrder(orderNumber: String) {
+        viewModelScope.launch {
+            orderRepository.deleteByNumber(orderNumber)
+        }
+    }
 }

@@ -24,8 +24,6 @@ interface OrderDao {
     @Insert
     suspend fun save(orderEntity: OrderEntity): Long
 
-    /*
     @Query("DELETE FROM orders WHERE order_number = :orderNumber")
     suspend fun deleteByNumber(orderNumber: String)
-    */
 }

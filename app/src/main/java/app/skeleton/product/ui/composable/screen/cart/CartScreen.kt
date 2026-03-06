@@ -9,10 +9,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import app.skeleton.product.R
-import app.skeleton.product.ui.composable.shared.BottomButtonBox
 import app.skeleton.product.ui.composable.shared.DataBasedContainer
 import app.skeleton.product.ui.composable.shared.DataEmptyContent
-import app.skeleton.product.ui.composable.shared.ItemsList
 import app.skeleton.product.ui.state.CartItemUiState
 import app.skeleton.product.ui.state.DataUiState
 import app.skeleton.product.ui.viewmodel.CartViewModel
@@ -60,13 +58,7 @@ private fun CartScreenContent(
             dataState = cartItemsState,
 
             dataPopulated = {
-                CartPopulated(
-                    cartItems = (cartItemsState as DataUiState.Populated).data,
-                    totalPrice = totalPrice,
-                    onPlusItemClick = onPlusItemClick,
-                    onMinusItemClick = onMinusItemClick,
-                    onCompleteOrderButtonClick = onCompleteOrderButtonClick,
-                )
+
             },
 
             dataEmpty = {
@@ -75,38 +67,6 @@ private fun CartScreenContent(
                     modifier = Modifier.fillMaxSize(),
                 )
             },
-        )
-    }
-}
-
-@Composable
-private fun CartPopulated(
-    cartItems: List<CartItemUiState>,
-    modifier: Modifier = Modifier,
-    totalPrice: Double,
-    onPlusItemClick: (Int) -> Unit,
-    onMinusItemClick: (Int) -> Unit,
-    onCompleteOrderButtonClick: () -> Unit,
-) {
-    Column(
-        modifier = modifier,
-        horizontalAlignment = Alignment.CenterHorizontally,
-    ) {
-        ItemsList(
-            items = cartItems,
-            modifier = Modifier.weight(1f),
-            itemCard = { cartItem ->
-                CartItem(
-                    cartItem = cartItem,
-                    onPlusClick = { onPlusItemClick(cartItem.productId) },
-                    onMinusClick = { onMinusItemClick(cartItem.productId) },
-                )
-            }
-        )
-
-        BottomButtonBox(
-            onButtonClick = onCompleteOrderButtonClick,
-            buttonText = stringResource(R.string.button_place_order_label, totalPrice),
         )
     }
 }

@@ -9,9 +9,9 @@ import androidx.navigation.toRoute
 import app.skeleton.product.ui.composable.screen.cart.CartScreen
 import app.skeleton.product.ui.composable.screen.checkout.CheckoutScreen
 import app.skeleton.product.ui.composable.screen.onboarding.OnboardingScreen
-import app.skeleton.product.ui.composable.screen.orders.OrdersScreen
+import app.skeleton.product.ui.composable.screen.order.OrdersScreen
 import app.skeleton.product.ui.composable.screen.productdetails.ProductDetailsScreen
-import app.skeleton.product.ui.composable.screen.products.ProductsScreen
+import app.skeleton.product.ui.composable.screen.home.HomeScreen
 import app.skeleton.product.ui.composable.screen.settings.SettingsScreen
 import app.skeleton.product.ui.composable.screen.splash.SplashScreen
 
@@ -60,7 +60,7 @@ fun AppNavHost(
         }
 
         composable<NavRoute.Home> {
-            ProductsScreen(
+            HomeScreen(
                 onNavigateToProductDetails = { id: Int ->
                     navController.navigate(
                         route = NavRoute.ProductDetails(id = id)

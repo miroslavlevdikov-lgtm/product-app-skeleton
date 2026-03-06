@@ -1,9 +1,7 @@
 package app.skeleton.product.ui.composable.approot
 
-import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
@@ -13,7 +11,6 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.unit.dp
 import androidx.navigation.NavDestination
 import androidx.navigation.NavDestination.Companion.hasRoute
 import androidx.navigation.NavHostController
@@ -126,36 +123,23 @@ private fun AppRootContent(
     Scaffold(
         topBar = {
             if (shouldShowTopBar) {
-                Column {
-                    AppTopBar(
-                        currentDestination = currentDestination,
-                        isCartNotEmpty = isCartNotEmpty,
-                        onClearCartIconClick = onClearCartIconClick,
-                        onNavigateBack = onNavigateBack,
-                    )
-                    HorizontalDivider(
-                        color = MaterialTheme.colorScheme.outline,
-                        thickness = 1.2.dp
-                    )
-                }
+                AppTopBar(
+                    currentDestination = currentDestination,
+                    isCartNotEmpty = isCartNotEmpty,
+                    onClearCartIconClick = onClearCartIconClick,
+                    onNavigateBack = onNavigateBack,
+                )
             }
         },
 
         bottomBar = {
             if (shouldShowBottomBar) {
-                Column {
-                    HorizontalDivider(
-                        color = MaterialTheme.colorScheme.outline,
-                        thickness = 1.2.dp
-                    )
-
-                    AppBottomBar(
-                        itemsInCart = itemsInCart,
-                        currentDestination = currentDestination,
-                        navigationItems = navigationItems,
-                        onNavigateToRoute = onNavigateToRoute,
-                    )
-                }
+                AppBottomBar(
+                    itemsInCart = itemsInCart,
+                    currentDestination = currentDestination,
+                    navigationItems = navigationItems,
+                    onNavigateToRoute = onNavigateToRoute,
+                )
             }
         },
         containerColor = MaterialTheme.colorScheme.background,

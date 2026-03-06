@@ -1,4 +1,4 @@
-package app.skeleton.product.ui.composable.screen.orders
+package app.skeleton.product.ui.composable.screen.home
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -8,62 +8,51 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import app.skeleton.product.R
-import app.skeleton.product.data.entity.OrderEntity
+import app.skeleton.product.data.model.Product
 import app.skeleton.product.ui.composable.shared.DataBasedContainer
 import app.skeleton.product.ui.composable.shared.DataEmptyContent
-import app.skeleton.product.ui.composable.shared.ItemsList
 import app.skeleton.product.ui.state.DataUiState
-import app.skeleton.product.ui.viewmodel.OrderViewModel
+import app.skeleton.product.ui.viewmodel.ProductViewModel
 import org.koin.androidx.compose.koinViewModel
 
 @Composable
-fun OrdersScreen(
+fun HomeScreen(
     modifier: Modifier = Modifier,
-    viewModel: OrderViewModel = koinViewModel(),
+    viewModel: ProductViewModel = koinViewModel(),
+    onNavigateToProductDetails: (productId: Int) -> Unit,
 ) {
-    val ordersState by viewModel.ordersState.collectAsState()
+    val productsState by viewModel.productsState.collectAsState()
 
-    OrdersContent(
-        ordersState = ordersState,
+    HomeContent(
+        productsState = productsState,
         modifier = modifier,
+        onNavigateToProductDetails = onNavigateToProductDetails,
+        onAddProductToCart = viewModel::addToCart,
     )
 }
 
 @Composable
-private fun OrdersContent(
-    ordersState: DataUiState<List<OrderEntity>>,
+private fun HomeContent(
+    productsState: DataUiState<List<Product>>,
     modifier: Modifier = Modifier,
+    onNavigateToProductDetails: (productId: Int) -> Unit,
+    onAddProductToCart: (productId: Int) -> Unit,
 ) {
     Column(modifier = modifier) {
 
         DataBasedContainer(
-            dataState = ordersState,
+            dataState = productsState,
 
             dataPopulated = {
-                OrdersPopulated(
-                    orders = (ordersState as DataUiState.Populated).data,
-                )
+
             },
 
             dataEmpty = {
                 DataEmptyContent(
-                    primaryText = stringResource(R.string.orders_state_empty_primary_text),
+                    primaryText = stringResource(R.string.products_state_empty_primary_text),
                     modifier = Modifier.fillMaxSize(),
                 )
             },
         )
     }
-}
-
-@Composable
-private fun OrdersPopulated(
-    orders: List<OrderEntity>,
-    modifier: Modifier = Modifier,
-) {
-
-    ItemsList(
-        items = orders,
-        modifier = Modifier.fillMaxSize(),
-        itemCard = { order -> OrderItem(order) }
-    )
 }
