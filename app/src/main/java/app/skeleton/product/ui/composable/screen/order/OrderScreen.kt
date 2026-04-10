@@ -39,6 +39,7 @@ private fun OrdersContent(
             dataState = ordersState,
 
             dataPopulated = {
+                val data = (ordersState as DataUiState.Populated).data
 
             },
 

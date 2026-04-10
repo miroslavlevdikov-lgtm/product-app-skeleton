@@ -2,6 +2,11 @@ package app.skeleton.product.ui.composable.approot
 
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.CalendarToday
+import androidx.compose.material.icons.filled.Home
+import androidx.compose.material.icons.filled.Settings
+import androidx.compose.material.icons.filled.ShoppingCart
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
@@ -27,23 +32,23 @@ import kotlin.reflect.KClass
 private val navigationItems: List<BottomNavItem> = listOf(
     BottomNavItem(
         titleRes = R.string.bottom_bar_nav_item_home_title,
-        iconRes = R.drawable.home_svgrepo_com,
-        route = NavRoute.Home
+        icon = Icons.Default.Home,
+        route = NavRoute.Home,
     ),
     BottomNavItem(
         titleRes = R.string.bottom_bar_nav_item_cart_title,
-        iconRes = R.drawable.cart_svgrepo_com,
-        route = NavRoute.Cart
+        icon = Icons.Default.ShoppingCart,
+        route = NavRoute.Cart,
     ),
     BottomNavItem(
         titleRes = R.string.bottom_bar_nav_item_orders_title,
-        iconRes = R.drawable.calendar_svgrepo_com,
-        route = NavRoute.Orders
+        icon = Icons.Default.CalendarToday,
+        route = NavRoute.Orders,
     ),
     BottomNavItem(
         titleRes = R.string.bottom_bar_nav_item_settings_title,
-        iconRes = R.drawable.settings_svgrepo_com,
-        route = NavRoute.Settings
+        icon = Icons.Default.Settings,
+        route = NavRoute.Settings,
     ),
 )
 

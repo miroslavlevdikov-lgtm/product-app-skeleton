@@ -44,7 +44,7 @@ private fun HomeContent(
             dataState = productsState,
 
             dataPopulated = {
-
+                val data = (productsState as DataUiState.Populated).data
             },
 
             dataEmpty = {

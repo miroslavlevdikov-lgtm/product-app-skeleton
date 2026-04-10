@@ -1,8 +1,6 @@
 package app.skeleton.product.data.repository
 
-import app.skeleton.product.R
 import app.skeleton.product.data.model.Product
-import app.skeleton.product.data.model.ProductCategory
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flowOf
 

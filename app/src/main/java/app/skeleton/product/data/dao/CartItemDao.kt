@@ -5,9 +5,9 @@ import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import androidx.room.Transaction
-import kotlinx.coroutines.flow.Flow
 import app.skeleton.product.data.entity.CartItemEntity
 import app.skeleton.product.data.model.Product
+import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface CartItemDao {

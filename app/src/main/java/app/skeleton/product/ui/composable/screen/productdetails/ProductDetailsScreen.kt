@@ -47,6 +47,7 @@ private fun ProductDetailsScreenContent(
             dataState = productState,
 
             dataPopulated = {
+                val data = (productState as DataUiState.Populated).data
 
             },
 

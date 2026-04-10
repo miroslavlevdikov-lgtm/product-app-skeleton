@@ -8,7 +8,7 @@ import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.GlobalContext.startKoin
 
-class SkeletonApp : Application() {
+class SkeletonApplication : Application() {
     override fun onCreate() {
         super.onCreate()
 
@@ -16,7 +16,7 @@ class SkeletonApp : Application() {
 
         startKoin {
             androidLogger()
-            androidContext(this@SkeletonApp)
+            androidContext(this@SkeletonApplication)
             modules(appModules)
         }
     }
