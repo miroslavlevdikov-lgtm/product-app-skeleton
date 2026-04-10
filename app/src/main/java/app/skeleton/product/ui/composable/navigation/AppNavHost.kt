@@ -8,10 +8,10 @@ import androidx.navigation.compose.composable
 import androidx.navigation.toRoute
 import app.skeleton.product.ui.composable.screen.cart.CartScreen
 import app.skeleton.product.ui.composable.screen.checkout.CheckoutScreen
+import app.skeleton.product.ui.composable.screen.home.HomeScreen
 import app.skeleton.product.ui.composable.screen.onboarding.OnboardingScreen
 import app.skeleton.product.ui.composable.screen.order.OrdersScreen
 import app.skeleton.product.ui.composable.screen.productdetails.ProductDetailsScreen
-import app.skeleton.product.ui.composable.screen.home.HomeScreen
 import app.skeleton.product.ui.composable.screen.settings.SettingsScreen
 import app.skeleton.product.ui.composable.screen.splash.SplashScreen
 
@@ -22,7 +22,7 @@ fun AppNavHost(
 ) {
     NavHost(
         navController = navController,
-        startDestination = NavRoute.Splash,
+        startDestination = NavRoute.Home,
         modifier = modifier,
     ) {
         composable<NavRoute.Splash> {

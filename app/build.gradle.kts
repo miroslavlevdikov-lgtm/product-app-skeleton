@@ -55,6 +55,13 @@ dependencies {
     implementation(libs.androidx.compose.ui.tooling.preview)
     implementation(libs.androidx.compose.material3)
 
+    // Coil
+    implementation("io.coil-kt.coil3:coil-compose:3.4.0")
+    implementation("io.coil-kt.coil3:coil-network-okhttp:3.4.0")
+
+    // Icons Extended
+    implementation("androidx.compose.material:material-icons-extended:1.7.8")
+
     // ConstraintLayout
     implementation("androidx.constraintlayout:constraintlayout-compose:1.1.1")
 
@@ -62,7 +69,7 @@ dependencies {
     implementation("androidx.navigation:navigation-compose:2.9.7")
 
     // Koin
-    implementation(platform("io.insert-koin:koin-bom:4.1.1"))
+    implementation(platform("io.insert-koin:koin-bom:4.2.0"))
     implementation("io.insert-koin:koin-android")
     implementation("io.insert-koin:koin-compose")
     implementation("io.insert-koin:koin-compose-viewmodel")
