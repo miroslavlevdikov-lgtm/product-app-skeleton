@@ -22,7 +22,7 @@ fun AppNavHost(
 ) {
     NavHost(
         navController = navController,
-        startDestination = NavRoute.Home,
+        startDestination = NavRoute.Splash,
         modifier = modifier,
     ) {
         composable<NavRoute.Splash> {
