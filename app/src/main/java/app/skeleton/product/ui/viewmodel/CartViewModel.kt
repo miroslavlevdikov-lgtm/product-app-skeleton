@@ -45,7 +45,7 @@ class CartViewModel(
                             productTitle = product.title,
                             productPrice = product.price,
                             quantity = cartItem.quantity,
-                            productImageRes = product.imageRes,
+                            productImageUrl = product.imageUrl,
                         )
                     }
                 }
