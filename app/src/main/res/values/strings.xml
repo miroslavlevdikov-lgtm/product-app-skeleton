@@ -71,6 +71,6 @@
     <!-- clear cart dialog -->
     <string name="clear_cart_dialog_title">Clear cart?</string>
     <string name="clear_card_dialog_text">Are you sure you want to remove all items from your cart?</string>
-    <string name="button_confirm_clear_cart_title">Confirm</string>
-    <string name="button_cancel_clear_cart_title">Cancel</string>
+    <string name="button_confirm_clear_cart">Confirm</string>
+    <string name="button_cancel_clear_cart">Cancel</string>
 </resources>
