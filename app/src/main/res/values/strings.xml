@@ -73,4 +73,7 @@
     <string name="clear_card_dialog_text">Are you sure you want to remove all items from your cart?</string>
     <string name="button_confirm_clear_cart">Confirm</string>
     <string name="button_cancel_clear_cart">Cancel</string>
+
+    <!-- firebase -->
+    <!--[FIREBASE][notification_channel]-->
 </resources>

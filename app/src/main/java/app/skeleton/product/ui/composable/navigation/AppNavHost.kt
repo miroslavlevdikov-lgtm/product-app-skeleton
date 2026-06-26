@@ -25,6 +25,10 @@ fun AppNavHost(
         startDestination = NavRoute.Splash,
         modifier = modifier,
     ) {
+        //[COMMON][PrepComposable]
+
+        //[COMMON][DetailsComposable]
+
         composable<NavRoute.Splash> {
             SplashScreen(
                 onNavigateToHomeScreen = {

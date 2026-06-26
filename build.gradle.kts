@@ -5,4 +5,5 @@ plugins {
     alias(libs.plugins.kotlin.compose) apply false
     // KSP plugin for Room library
     id("com.google.devtools.ksp").version("2.3.6")
+    //[FIREBASE][google_services_plugin]
 }

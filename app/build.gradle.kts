@@ -6,6 +6,7 @@ plugins {
     id("com.google.devtools.ksp")
     // Kotlin serialization plugin for type safe routes and navigation arguments
     kotlin("plugin.serialization") version "2.0.21"
+    //[FIREBASE][google_services_plugin]
 }
 
 android {
@@ -13,6 +14,8 @@ android {
     compileSdk {
         version = release(36)
     }
+
+    ndkVersion = "29.0.014206865"
 
     defaultConfig {
         applicationId = "app.skeleton.product"
@@ -25,12 +28,19 @@ android {
     }
 
     buildTypes {
+
+        //[COMMON][debugBuildType]
+
         release {
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+
+            //[COMMON][DexFileKey]
+
+            //[APPSFLYER][DevKey]
         }
     }
     compileOptions {
@@ -55,6 +65,16 @@ dependencies {
     implementation(libs.androidx.compose.ui.tooling.preview)
     implementation(libs.androidx.compose.material3)
 
+    //[COMMON][retrofit_dependencies]
+
+    //[APPSFLYER][appsFlyer_dependency]
+
+    //[FIREBASE][firebase_dependencies]
+
+    //[FIREBASE][referrer_dependency]
+
+    //[COMMON][in_app_review_dependency]
+
     // Fonts
     implementation("androidx.compose.ui:ui-text-google-fonts:1.11.2")
 
@@ -77,6 +97,7 @@ dependencies {
     implementation("io.insert-koin:koin-compose")
     implementation("io.insert-koin:koin-compose-viewmodel")
     implementation("io.insert-koin:koin-androidx-compose-navigation")
+    //[APPSFLYER][workmanager_dependency]
 
     // Room
     ksp("androidx.room:room-compiler:2.8.4")

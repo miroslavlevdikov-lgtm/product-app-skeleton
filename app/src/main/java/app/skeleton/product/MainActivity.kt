@@ -16,5 +16,15 @@ class MainActivity : ComponentActivity() {
                 AppRoot()
             }
         }
+
+        //[FIREBASE][onCreate_handleNotificationIntent]
     }
+
+    //[FIREBASE|APPSFLYER][onNewIntent]
+
+    //[FIREBASE][handleNotificationIntent]
+
+    //[FIREBASE][scheduleClickTracking]
+
+    //[FIREBASE][openExternalBrowser]
 }
