@@ -1,7 +1,7 @@
 package app.skeleton.product
 
 import android.app.Application
-//[FIREBASE|APPSFLYER][import_PrepRepository]
+//[ANY][import_PrepRepository]
 import app.skeleton.product.di.dataModule
 import app.skeleton.product.di.dispatcherModule
 import app.skeleton.product.di.viewModule
