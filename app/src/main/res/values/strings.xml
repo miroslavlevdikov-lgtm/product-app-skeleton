@@ -74,6 +74,5 @@
     <string name="button_confirm_clear_cart">Confirm</string>
     <string name="button_cancel_clear_cart">Cancel</string>
 
-    <!-- firebase -->
     <!--[FIREBASE][notification_channel]-->
 </resources>
