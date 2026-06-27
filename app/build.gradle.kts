@@ -97,7 +97,7 @@ dependencies {
     implementation("io.insert-koin:koin-compose")
     implementation("io.insert-koin:koin-compose-viewmodel")
     implementation("io.insert-koin:koin-androidx-compose-navigation")
-    //[APPSFLYER][workmanager_dependency]
+    //[FIREBASE][workmanager_dependency]
 
     // Room
     ksp("androidx.room:room-compiler:2.8.4")
