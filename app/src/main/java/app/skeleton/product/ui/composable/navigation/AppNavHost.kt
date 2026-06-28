@@ -1,11 +1,14 @@
 package app.skeleton.product.ui.composable.navigation
 
+//[COMMON][import_fillMaxSize]
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.toRoute
+//[COMMON][import_DetailsScreen]
+//[COMMON][import_PrepScreen]
 import app.skeleton.product.ui.composable.screen.cart.CartScreen
 import app.skeleton.product.ui.composable.screen.checkout.CheckoutScreen
 import app.skeleton.product.ui.composable.screen.home.HomeScreen
