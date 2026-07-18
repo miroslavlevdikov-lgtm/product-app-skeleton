@@ -56,9 +56,9 @@
     <string name="button_confirm_order_label">Confirm Order</string>
 
     <!-- checkout dialog -->
-    <string name="checkout_dialog_title">Order Confirmed</string>
-    <string name="checkout_dialog_order_number">Order number: #%1$s</string>
-    <string name="checkout_dialog_processing_message">Your order will be processed within 24 hours.</string>
+    <string name="checkout_dialog_title">Thank You for Your Order!</string>
+    <string name="checkout_success_message">Your order has been successfully placed. Please hold on; our team will contact you shortly.</string>
+    <string name="checkout_dialog_confirm">Done</string>
 
     <!-- settings screen -->
     <string name="settings_screen_company_label">Company</string>

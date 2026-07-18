@@ -15,7 +15,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.focus.FocusManager
 import androidx.compose.ui.platform.LocalFocusManager
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import app.skeleton.product.data.entity.OrderEntity
 import app.skeleton.product.ui.state.DataUiState
 import app.skeleton.product.ui.viewmodel.CheckoutViewModel
 import org.koin.androidx.compose.koinViewModel
@@ -40,7 +39,6 @@ fun CheckoutScreen(
 
     if (orderState is DataUiState.Populated) {
         CheckoutDialog(
-            order = (orderState as DataUiState.Populated<OrderEntity>).data,
             onConfirm = onNavigateToOrdersScreen
         )
     }
